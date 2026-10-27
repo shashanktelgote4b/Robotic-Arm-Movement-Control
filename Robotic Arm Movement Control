@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+    int choice;
+    int angle = 90;
+
+    do
+    {
+        printf("\n===== ROBOTIC ARM =====\n");
+        printf("1. Move Left\n");
+        printf("2. Move Right\n");
+        printf("3. Reset Position\n");
+        printf("4. Exit\n");
+
+        printf("Enter Choice: ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+            case 1:
+                if(angle >= 10)
+                    angle -= 10;
+
+                printf("Angle = %d\n", angle);
+                break;
+
+            case 2:
+                if(angle <= 170)
+                    angle += 10;
+
+                printf("Angle = %d\n", angle);
+                break;
+
+            case 3:
+                angle = 90;
+                printf("Arm Reset\n");
+                break;
+
+            case 4:
+                printf("System Stopped");
+                break;
+
+            default:
+                printf("Invalid Choice");
+        }
+
+    } while(choice != 4);
+
+    return 0;
+}
